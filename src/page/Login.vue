@@ -1,6 +1,19 @@
 <template>
 	<div>
-		<mt-picker :slots="slots" @change="onValuesChange"></mt-picker>
+		<form>
+			<div>
+				<input type="text" placeholder="Username" />
+			</div>
+			<div>
+				<input type="text" placeholder="Password" />
+			</div>
+			<div>
+				<button class="long">Sign in</button>
+			</div>
+			<div>
+				<button class="long">Sign up</button>
+			</div>
+		</form>
 	</div>
 </template>
 
