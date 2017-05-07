@@ -8,10 +8,13 @@
 				<input type="text" placeholder="Password" />
 			</div>
 			<div>
-				<button class="long">Sign in</button>
+				<button class="btn-link long">Sign in</button>
 			</div>
 			<div>
-				<button class="long">Sign up</button>
+				<a class="btn-link long">Sign up</a>
+			</div>
+			<div>还没有帐户？
+				<router-link :to="{name:'Register'}">注册一个</router-link>
 			</div>
 		</form>
 	</div>
