@@ -7,6 +7,9 @@
 				</li>
 			</ul>
 		</div>
+		<br />=====<br />
+		{{sliderLeft}}
+		<br />=====<br />
 	</div>
 </template>
 
@@ -26,6 +29,9 @@
 				}, {
 					href: "http://www.baidu.com",
 					src: "http://img.zcool.cn/community/focus/e25b5910f8b70000015a1c871cdc.jpg"
+				}, {
+					href: "http://www.baidu.com",
+					src: "http://img.zcool.cn/community/focus/21975910f89a0000015a1c15cd46.jpg"
 				}, {
 					href: "http://www.baidu.com",
 					src: "http://img.zcool.cn/community/focus/21975910f89a0000015a1c15cd46.jpg"
@@ -58,9 +64,19 @@
 				this.mouseY = touch.pageY;
 			},
 			touchmoveFun() {
+				var mover = this.sliderLeft;
+				console.log(mover)
 				var touch = event.targetTouches[0];
 				this.endX = touch.pageX;
 				this.endY = touch.pageY;
+				
+				//console.log("开始点：" + this.startX + "，移动中：" +touch.pageX)
+				mover = touch.pageX - this.startX;
+				//console.log("移动距离:" + mover);
+				
+				this.countX = touch.pageX + this.startX;
+				this.silderStyle.left = mover + 'px';
+				this.sliderLeft = mover;
 			},
 			touchendFun() {
 				var longbu = 0;
